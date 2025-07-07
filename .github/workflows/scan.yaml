@@ -5,9 +5,9 @@ on:
       - develop
 
 env:
-  ACTIVE_API_URL: "<ACTIVE_API_URL>"
-  ACTIVE_REGISTRY_URL: "<ACTIVE_REGISTRY_URL>"
-  ACTIVE_BACKEND_URI: "<ACTIVE_BACKEND_URI>"
+  ACTIVE_API_URL: "https://prod-demo1.nnsworkshop.com/active"
+  ACTIVE_REGISTRY_URL: "jfrog.cicd.nonamesec.com/nns-docker"
+  ACTIVE_BACKEND_URI: "prod-demo1.nnsworkshop.com/active/backend"
 
 jobs:
   scan:
