@@ -34,9 +34,9 @@ jobs:
          run: >
           docker run
           --add-host=host.docker.internal:host-gateway
-          -e ACTIVE_CONFIG_FILE_PATH=<PATH_TO_ACTIVE_CONFIG_FILE>
+          -e ACTIVE_CONFIG_FILE_PATH=/noname/active-config_vampi.json
           -e ACTIVE_BACKEND_URI={{ env.ACTIVE_BACKEND_URI }}
-          -v $(pwd)/noname:<PATH_TO_CONFIG_DIRECTORY>
+          -v $(pwd)/noname:/noname
           ${{ env.ACTIVE_REGISTRY_URL }}/active-cli:$(curl -k ${{env.ACTIVE_API_URL}}/backend/version) scan
           --api-url=${{ env.ACTIVE_API_URL }}
           --api-token=${{ secrets.ACTIVE_API_TOKEN }}
