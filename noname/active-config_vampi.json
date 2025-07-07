@@ -1,7 +1,7 @@
 {
   "version": "1.1.0",
   "applicationId": "e8576dd1-1d4d-4a49-8b45-26cc7490e60b",
-  "host": "http://localhost/:5002",
+  "host": "http://host.docker.internal:5002",
   "sources": [
     {
       "name": "OAS VAmPI Gen",
