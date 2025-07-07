@@ -40,7 +40,7 @@ jobs:
           ${{ env.ACTIVE_REGISTRY_URL }}/active-cli:$(curl -k ${{env.ACTIVE_API_URL}}/backend/version) scan
           --api-url=${{ env.ACTIVE_API_URL }}
           --api-token=${{ secrets.ACTIVE_API_TOKEN }}
-          --test-group-id=9cfa523e-8154-4673-b947-945cc44d1f8f>
+          --test-group-id=9cfa523e-8154-4673-b947-945cc44d1f8f
           --branch-name=${{ github.head_ref || github.ref_name }}
           --severity-threshold=none
 
