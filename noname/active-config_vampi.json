@@ -1,0 +1,10 @@
+{
+  "version": "1.1.0",
+  "applicationId": "b01c90f4-43b8-4910-9577-9fbc1214fd5e",
+  "host": "http://localhost:5002/",
+  "sources": [],
+  "auths": [],
+  "app": {
+    "secrets": []
+  }
+}
