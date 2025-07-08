@@ -7,7 +7,7 @@ on:
 env:
   ACTIVE_API_URL: "https://prod-demo1.nnsworkshop.com/active"
   ACTIVE_REGISTRY_URL: "jfrog.cicd.nonamesec.com/nns-docker"
-  ACTIVE_BACKEND_URI: "prod-demo1.nnsworkshop.com/active/backend"
+  #ACTIVE_BACKEND_URI: "prod-demo1.nnsworkshop.com/active/backend"
 
 jobs:
   scan:
@@ -30,15 +30,15 @@ jobs:
           username: ${{ secrets.ACTIVE_REGISTRY_USER }}
           password: ${{ secrets.ACTIVE_REGISTRY_PASSWORD }}
 
+       #-e ACTIVE_BACKEND_URI=${{ env.ACTIVE_BACKEND_URI }}
+       #${{ env.ACTIVE_REGISTRY_URL }}/active-cli:$(curl -k ${{env.ACTIVE_API_URL}}/backend/version) scan
        - name: Active Testing Scan
          run: >
           docker run
           --add-host=host.docker.internal:host-gateway
           -e ACTIVE_CONFIG_FILE_PATH=/noname/active-config_vampi.json
-          #-e ACTIVE_BACKEND_URI=${{ env.ACTIVE_BACKEND_URI }}
           -v $(pwd)/noname:/noname
-          ${{ env.NONAME_REGISTRY }}/active-cli:2.26.0 scan
-	  #${{ env.ACTIVE_REGISTRY_URL }}/active-cli:$(curl -k ${{env.ACTIVE_API_URL}}/backend/version) scan
+          ${{ env.ACTIVE_REGISTRY_URL }}/active-cli:2.26.0 scan
           --api-url=${{ env.ACTIVE_API_URL }}
           --api-token=${{ secrets.ACTIVE_API_TOKEN }}
           --test-group-id=9cfa523e-8154-4673-b947-945cc44d1f8f
