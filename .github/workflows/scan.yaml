@@ -2,7 +2,7 @@ on:
   push:
     branches:
       - master
-      - develop
+      - 2.26.0
 
 env:
   ACTIVE_API_URL: "https://prod-demo1.nnsworkshop.com/active"
