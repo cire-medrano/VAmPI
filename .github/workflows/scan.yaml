@@ -3,6 +3,7 @@ on:
     branches:
       - master
       - 2.26.0
+      - 2.37.1
 
 env:
   ACTIVE_API_URL: "https://prod-demo1.nnsworkshop.com/active"
@@ -38,7 +39,7 @@ jobs:
           --add-host=host.docker.internal:host-gateway
           -e ACTIVE_CONFIG_FILE_PATH=/noname/active-config_vampi.json
           -v $(pwd)/noname:/noname
-          ${{ env.ACTIVE_REGISTRY_URL }}/active-cli:2.26.0 scan
+          ${{ env.ACTIVE_REGISTRY_URL }}/active-cli:2.37.1 scan
           --api-url=${{ env.ACTIVE_API_URL }}
           --api-token=${{ secrets.ACTIVE_API_TOKEN }}
           --test-group-id=9cfa523e-8154-4673-b947-945cc44d1f8f
